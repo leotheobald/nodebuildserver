@@ -1,9 +1,10 @@
-/* Mixin */
+/* colour variables */
 @base: #663333;
-@lighter1: lighten(spin(@base, 5), 10%);
-@lighter2: lighten(spin(@base, 10), 20%);
-@darker1: darken(spin(@base, -5), 10%);
-@darker2: darken(spin(@base, -10), 20%);
+@deepbase: spin(@base, 180);
+@lighter1: lighten(@deepbase, 10%);
+@lighter2: lighten(@deepbase, 20%);
+@darker1: darken(@deepbase, 10%);
+@darker2: darken(@deepbase, 20%);
 
 /* Implementation */
 .one, .two, .three, .four, .five {
@@ -12,7 +13,7 @@
   float: left;
 }
 .one   {
-  background-color: @base;
+  background-color: @deepbase;
 }
 .two   {
   background-color: @lighter1;
@@ -30,5 +31,5 @@
 @colorpink: pink;
 
 p {
-  color: @lighter2;
+  color: @darker1;
 }

@@ -1,4 +1,4 @@
-/* Mixin */
+/* colour variables */
 /* Implementation */
 .one,
 .two,
@@ -10,20 +10,20 @@
   float: left;
 }
 .one {
-  background-color: #663333;
+  background-color: #336666;
 }
 .two {
-  background-color: #884a44;
+  background-color: #448888;
 }
 .three {
-  background-color: #aa6355;
+  background-color: #55aaaa;
 }
 .four {
-  background-color: #442225;
+  background-color: #224444;
 }
 .five {
-  background-color: #221114;
+  background-color: #112222;
 }
 p {
-  color: #aa6355;
+  color: #224444;
 }

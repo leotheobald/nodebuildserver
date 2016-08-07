@@ -1,5 +1,6 @@
-/* colour variables */
-/* Implementation */
+html {
+  position: relative;
+}
 .one,
 .two,
 .three,
@@ -26,4 +27,11 @@
 }
 p {
   color: #224444;
+}
+.overlay {
+  background-color: rgba(68, 136, 136, 0.4);
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }

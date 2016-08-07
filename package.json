@@ -23,9 +23,10 @@
     "build:html": "htmlmin assets/html/index.html > dist/index.html",
     "watch:html": "watch 'npm run build:html' assets/html",
     "build": "npm run build:js && npm run build:css && npm run build:html",
+    "open:dev": "opener http://localhost:9090",
     "live-reload": "live-reload --port 9091 dist/",
     "serve": "http-server -p 9090 dist/",
     "nodemon:watch": "nodemon -q -w assets/ --ext '.' --exec 'npm run build'",
-    "dev": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html' 'npm run nodemon:watch' 'npm run live-reload' 'npm run serve'"
+    "dev": "npm run open:dev -s && parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html' 'npm run live-reload' 'npm run serve' 'npm run nodemon:watch'"
   }
 }

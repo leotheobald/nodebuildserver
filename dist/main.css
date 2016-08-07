@@ -1,20 +1,29 @@
 /* Mixin */
 /* Implementation */
+.one,
+.two,
+.three,
+.four,
+.five {
+  height: 300px;
+  width: 20%;
+  float: left;
+}
 .one {
-  color: #663333;
+  background-color: #663333;
 }
 .two {
-  color: #884a44;
+  background-color: #884a44;
 }
 .three {
-  color: #aa6355;
+  background-color: #aa6355;
 }
 .four {
-  color: #442225;
+  background-color: #442225;
 }
 .five {
-  color: #221114;
+  background-color: #221114;
 }
 p {
-  color: pink;
+  color: #aa6355;
 }

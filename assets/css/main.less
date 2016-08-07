@@ -6,14 +6,29 @@
 @darker2: darken(spin(@base, -10), 20%);
 
 /* Implementation */
-.one   {color: @base;}
-.two   {color: @lighter1;}
-.three {color: @lighter2;}
-.four  {color: @darker1;}
-.five  {color: @darker2;}
+.one, .two, .three, .four, .five {
+  height: 300px;
+  width: 20%;
+  float: left;
+}
+.one   {
+  background-color: @base;
+}
+.two   {
+  background-color: @lighter1;
+}
+.three {
+  background-color: @lighter2;
+}
+.four  {
+  background-color: @darker1;
+}
+.five  {
+  background-color: @darker2;
+}
 
 @colorpink: pink;
 
 p {
-  color: @colorpink;
+  color: @lighter2;
 }

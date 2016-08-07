@@ -1,0 +1,31 @@
+{
+  "name": "nodebuildserver",
+  "version": "0.0.0",
+  "description": "A node build server with watch",
+  "main": "index.html",
+  "author": "Leo Theobald <leotheo@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^6.3.2",
+    "htmlmin": "latest",
+    "http-server": "^0.7.3",
+    "less": "latest",
+    "live-reload": "^0.2.0",
+    "nodemon": "^1.10.0",
+    "parallelshell": "^1.0.0",
+    "watch": "latest"
+  },
+  "scripts": {
+    "build:js": "browserify assets/js/main.js > dist/main.js",
+    "watch:js": "watch 'npm run build:js' assets/js/",
+    "build:css": "lessc assets/css/main.less > dist/main.css",
+    "watch:css": "watch 'npm run build:css' assets/css/",
+    "build:html": "htmlmin assets/html/index.html > dist/index.html",
+    "watch:html": "watch 'npm run build:html' assets/html",
+    "build": "npm run build:js && npm run build:css && npm run build:html",
+    "live-reload": "live-reload --port 9091 dist/",
+    "serve": "http-server -p 9090 dist/",
+    "nodemon:watch": "nodemon -q -w assets/ --ext '.' --exec 'npm run build'",
+    "dev": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html' 'npm run nodemon:watch' 'npm run live-reload' 'npm run serve'"
+  }
+}

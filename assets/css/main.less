@@ -6,6 +6,9 @@
 @darker1: darken(@deepbase, 10%);
 @darker2: darken(@deepbase, 20%);
 
+// Some more colours
+@colorpink: pink;
+
 // Implementation
 html {
   position: relative;
@@ -30,15 +33,12 @@ html {
 .five  {
   background-color: @darker2;
 }
-
-@colorpink: pink;
 h1 {
   color: @lighter1;
 }
 p {
   color: @deepbase;
 }
-
 .overlay {
   background-color: fade(@lighter1, 40%);
   display: none;

@@ -25,8 +25,11 @@ html {
 .five {
   background-color: #112222;
 }
+h1 {
+  color: #448888;
+}
 p {
-  color: #224444;
+  color: #336666;
 }
 .overlay {
   background-color: rgba(68, 136, 136, 0.4);

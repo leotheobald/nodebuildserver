@@ -1,3 +1,20 @@
+/* Mixin */
+/* Implementation */
+.one {
+  color: #663333;
+}
+.two {
+  color: #884a44;
+}
+.three {
+  color: #aa6355;
+}
+.four {
+  color: #442225;
+}
+.five {
+  color: #221114;
+}
 p {
   color: pink;
 }

@@ -39,7 +39,7 @@ $(document).ready(function() {
   var showPrice = function() {
     var vacation = $(this).closest('.tour');
     var price = vacation.data('price');
-    var details = $('<p>Book 3 days for $'+(3 * price)+'</p>');
+    var details = $('<p>Book 3 days for $'+(4 * price)+'</p>');
     vacation.addClass('selected');
     vacation.append(details);
   };
@@ -48,24 +48,28 @@ $(document).ready(function() {
     $(this).closest('.tour').hide();
   };
 
-  // target specific namespace handler.
+  // Target specific namespace handler.
   $('.tour').on('click.price', 'button', showPrice);
   $('.tour').on('show.price', showPrice);
+
+  // Remove item from list
+  $('.not-interested').on('click.tour', remove);
 
   $('.show-prices').on('click', function(event) {
     event.preventDefault();
     if ( $('.tour').hasClass('selected') ) {
-		  // disable .tour.selected button
+      // Disable button if selected class exists
       $('.tour').off('click.price');
 	  } else if( !$('.tour').hasClass('selected') ) {
+      // Display all unselected tours price
       $('.tour').trigger('show.price');
     };
 
   });
 
-  // Remove item from list
-  $('.not-interested').on('click.tour', remove);
 });
+
+
 // $(document).ready(function(){
 //
 //   $('.vacation').priceify();

@@ -9,9 +9,58 @@
 // Some more colours
 @colorpink: pink;
 
+// Mixins
+.responsive(@minWidth; @maxWidth; @rules) {
+  @media only screen and (min-width: @minWidth) and (max-width: @maxWidth) {
+    @rules();
+  }
+}
+
+
 // Implementation
 html {
   position: relative;
+}
+body {
+  background-color: #e7e5e4;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+// Theme
+h1 {
+  color: white;
+  font-size: 72px;
+  font-weight: 800;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+
+  .responsive(481px, 768px, {
+    color: #0000ff;
+  });
+	.responsive(767px, 1024px, {
+    color: #ff0000;
+  });
+  .responsive(0px, 480px, {
+    color: #00ff00;
+  });
+}
+p {
+  color: @deepbase;
+}
+#wrapper {
+  margin: 0 auto;
+  width: 1024px;
+}
+#container {
+  position: relative;
+  display: none;
 }
 .one, .two, .three, .four, .five {
   height: 300px;
@@ -31,18 +80,71 @@ html {
   background-color: @darker1;
 }
 .five  {
-  background-color: @darker2;
-}
-h1 {
-  color: @lighter1;
-}
-p {
-  color: @deepbase;
+  background-color: @darker1;
 }
 .overlay {
-  background-color: fade(@lighter1, 40%);
-  display: none;
-  position: fixed;
+  display: table;
+  overflow: hidden;
+  display: inline-block;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: initial;
+  bottom: initial;
+  z-index: 100;
 }
+.overlay p {
+  display: table-cell;
+  font-weight: 800;
+  font-size: 92px;
+  text-align: center;
+  background-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  vertical-align: middle;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li.tour  {
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    width: 30.3333336%;
+    &:last {
+      margin-right: 0;
+    }
+    &:first {
+      margin-left: 0;
+    }
+  }
+}
+// .col {
+//   &1 {
+//     background-color: @mauve;
+//     #grid > .setGridWidths(6, 8, 2, 3);
+//   }
+//   &2 {
+//     background-color: #f0f9e3;
+//     #grid > .setGridWidths(6, 2, 4, 5);
+//   }
+//   &3 {
+//     background-color: #cad1c1;
+//     #grid > .setGridWidths(12, 2, 6, 8);
+//   }
+// }
+
+// Animate column width changes across breakpoints
+// .col1,
+// .col2,
+// .col3 {
+//   height: 300px;
+//   -webkit-transition: all 1s ease-in 0.2s;
+//      -moz-transition: all 1s ease-in 0.2s;
+//       -ms-transition: all 1s ease-in 0.2s;
+//        -o-transition: all 1s ease-in 0.2s;
+//           transition: all 1s ease-in 0.2s;
+// }
